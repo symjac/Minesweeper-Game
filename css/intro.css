@@ -73,10 +73,14 @@ body {
 }
 
 /* CAROUSEL */
+.carousel-slide-container {
+  display: flex;
+}
 .carousel-slide {
   margin: 0px 10px;
   border-radius: 10px;
   width: 100%;
+  height: 375px;
 }
 .carousel-slide img {
   width: 50%;
@@ -94,6 +98,7 @@ body {
 .carousel-slide-details p {
   font-size: 18px;
   line-height: 22px;
+  text-align: center;
   padding-bottom: 20px;
 }
 .slick-arrow:before {
@@ -102,4 +107,32 @@ body {
 }
 .slick-dots {
   bottom: -30px;
+}
+
+@media (max-width: 600px){
+  .game-intro-wrapper {
+    width: 400px;
+  }
+  .carousel-slide-container  {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .carousel-slide img {
+    width: 100px;
+    height: 100px;
+    padding: 10px 0px 5px;
+  }
+  .carousel-slide-details {
+    width: 100%;
+    padding: 10px 15px 0px;
+  }
+  .carousel-slide-details h2 {
+    font-size: 22px;
+    line-height: 23px;
+  }
+  .carousel-slide-details p {
+    font-size: 16px;
+    line-height: 18px;
+  }
 }
