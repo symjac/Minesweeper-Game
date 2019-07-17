@@ -111,7 +111,7 @@ body {
 
 @media (max-width: 600px){
   .game-intro-wrapper {
-    width: 400px;
+    width: 300px;
   }
   .carousel-slide-container  {
     flex-direction: column;
@@ -125,14 +125,14 @@ body {
   }
   .carousel-slide-details {
     width: 100%;
-    padding: 10px 15px 0px;
+    padding: 10px 10px 0px;
   }
   .carousel-slide-details h2 {
-    font-size: 22px;
+    font-size: 21px;
     line-height: 23px;
   }
   .carousel-slide-details p {
-    font-size: 16px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 16px;
   }
 }
