@@ -165,9 +165,14 @@ button {
     width: 450px;
   }
   .game-rules-body {
+    display: none;
     font-size: 16px;
     line-height: 22px;
   }
+  .rules-close {
+    display: none;
+  }
+
   /* TILES */
   .game-square {
     width: 75px;
