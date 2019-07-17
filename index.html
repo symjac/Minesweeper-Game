@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Minesweeper</title>
+
+  <!-- RESET -->
+  <link rel="stylesheet" href="vendor/reset/reset.css">
+
+  <!-- SLICK SLIDER CSS -->
+  <link rel="stylesheet" href="vendor/slick/slick/slick.css">
+
+  <!-- SLICK SLIDER CSS -->
+  <link rel="stylesheet" href="vendor/slick/slick/slick-theme.css">
+
+  <!-- STYLING -->
+  <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="css/monsters.css">
+  <link rel="stylesheet" href="css/skunks.css">
+  <link rel="stylesheet" href="css/cops.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Freckle+Face&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Asap&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Poppins:400,700&display=swap" rel="stylesheet">
+
+  <!-- INCLUDE JQUERY LOCALLY -->
+  <script src="vendor/jquery/jquery.js"></script>
+
+  <!-- SLICK SLIDER JS -->
+  <script src="vendor/slick/slick/slick.min.js"></script>
+
+  <!-- INCLUDE LOCAL SCRIPT FILE -->
+  <script src="scripts/intro.js"></script>
+
+</head>
+<body class="flex-center flex-column">
+
+<h1 class="game-intro-header">It's Minesweeper... with a twist!</h1>
+
+<div class="wrapper-bg">
+  <div class="game-intro-wrapper flex-column">
+    <div class="game-intro-rules">
+      <ul>So what's Minesweeper?</ul>
+      <li>Minesweeper is a game that starts out with a grid of unmarked squares.
+        Some squares are safe to click but others are bombs!
+        If you click a bomb, game over.</li>
+      <li>If you click a safe square (20), it will reveal a number. The number is how
+        many bombs are 'neighboring' that square: to the top, bottom, left, right,
+        and both diagonals. It's your job to use the numbers to figure out which
+        of the unmarked squares have bombs and which are safe to click.</li>
+      <li>If you suspect a square is a bomb, then flag it using the Flag Button.
+        Click the Flag Button and then click on the square that you think is a
+        bomb. </li>
+      <li>Once all bombs (5) are flagged, game won!</li>
+      <ul>So what's the twist?</ul>
+      <li>Before you play, select a game board theme below.
+        Each one has its own own "bomb" to avoid and its down "flag" as a way to
+        mark the sqaures that are bombs.</li>
+  </div>
+
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-slide monsters-bgc">
+        <div class="flex-wrap">
+          <img src="images/monsters.png" alt="Monsters">
+          <div class="carousel-slide-details flex-column flex-center">
+            <h2 class="monsters-light-font monsters-header-font">Watch out!</br>
+              There are monsters lurking in the woods.</h2>
+            <p class="monsters-light-font monsters-body-font">To cut the monsters
+              down with a chainsaw, place a flag on the squares they're hiding
+              behind. But be careful you don't click their hiding spot before
+              flagging it. They're hungry for humans!</p>
+            <button class="monsters-bttn monsters-header-font">
+              <a href="monsters.html" class="monsters-light-font">PLAY</a>
+            </button>
+        </div>
+      </div>
+      </div>
+      <div class="carousel-slide cops-bgc">
+        <div class="flex-wrap">
+        <img src="images/cops.png" alt="Cops">
+          <div class="carousel-slide-details flex-column flex-center">
+            <h2 class="cops-light-font cops-header-font">On the Run!</br>
+              You robbed a bank but now you have to getaway.</h2>
+            <p class="cops-light-font cops-body-font">To avoid getting caught,
+              wear a disguise by placing a flag on the squares where the cops are
+              staked out. But be careful you don't click their stakeout spot before
+              flagging it. They'll take you to jail!</p>
+            <a href="cops.html">
+              <button class="cops-bttn cops-dark-font cops-header-font">PLAY</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-slide skunks-bgc">
+        <div class="flex-wrap">
+          <img src="images/skunks.png" alt="Skunks">
+          <div class="carousel-slide-details flex-column flex-center">
+            <h2 class="skunks-light-font skunks-header-font">
+              What's that smell? Skunks!</h2>
+            <p class="skunks-light-font skunks-body-font">To capture the skunks
+              with a carrier cage, place a flag on the squares they're hiding
+              behind. But be careful you don't click their hiding spot before
+              flagging it. They're ready to spray anyone who disturbs them!</p>
+            <a href="skunks.html">
+              <button class="skunks-bttn skunks-light-font skunks-header-font">PLAY</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

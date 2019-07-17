@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Minesweeper - Cops</title>
+
+  <!-- RESET -->
+  <link rel="stylesheet" href="vendor/reset/reset.css">
+
+  <!-- STYLING -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cops.css">
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Asap&display=swap" rel="stylesheet">
+
+  <!-- INCLUDE JQUERY LOCALLY -->
+  <script src="vendor/jquery/jquery.js"></script>
+
+  <!-- INCLUDE LOCAL SCRIPT FILE -->
+  <script src="scripts/game.js"></script>
+  <script src="https://kit.fontawesome.com/735d49a661.js"></script>
+
+</head>
+
+<body class="cops-bgc cops-body-font">
+
+<div class="page-container flex-center">
+
+<div class="game-wrapper flex-center">
+  <div class="game-info flex-center flex-column">
+    <div class="game-image">
+      <img src="images/cops.png">
+    </div>
+    <div class="game-rules-container cops-dark-font">
+      <p class="game-rules-header cops-header-font">After robbing a bank, can you avoid getting caught?</p>
+      <div class="game-rules-collapse">
+        <div class="rules-close flex-wrap">
+          <i class="fas fa-chevron-down"></i>
+          <p class="rules-collapse-arrows">close rules</p>
+        </div>
+        <div class="rules-open flex-wrap hide">
+          <i class="fas fa-chevron-up"></i>
+          <p class="rules-collapse-arrows">open rules</p>
+        </div>
+      </div>
+      <div class="game-rules-body">
+        <p>Select a square to reveal a clue (a number) on where the cops are staked out.</p>
+        <br>
+        <p>The number shown is how many cops are neighboring that square - to the right, left, top, bottom, & all diagonals.</p>
+        <br>
+        <p>If you think the cops are waiting behind a square, sneak away by flagging it with a clever disguise.</p>
+      </div>
+    </div>
+    <div class="game-buttons flex-column flex-center">
+      <a href="#">
+        <button class="button-flag cops-bttn cops-dark-font cops-header-font">FLAG</button>
+      </a>
+      <a href="#">
+        <button class="button-new cops-bttn cops-dark-font cops-header-font">NEW GAME</button>
+      </a>
+      <a href="index.html">
+        <button class="button-back cops-bttn cops-dark-font cops-header-font">BACK</button>
+      </a>
+    </div>
+  </div>
+  <div class="game-grid flex-wrap cops-header-font flex-space-between">
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+    <div class="flex-center safe game-square cops-dark-font cops"></div>
+
+    <div class="game-end flex-center cops-light-font cops hide">
+      <div class="game-end-won flex-column hide">
+        <p class="game-won end-headline cops-header-font">Congrats!</p>
+        <p class="game-won end-text cops-header-font">You successfully avoided getting caught.</p>
+      </div>
+      <div class="game-end-lost flex-column hide">
+        <p class="game-lost end-headline cops-header-font">Oh no!</p>
+        <p class="game-lost end-text cops-header-font">You were caught by the cops.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="credits">Icons made by <a href="https://www.freepik.com/"
+  title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
+  title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
+  title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+</body>
+
+</html>

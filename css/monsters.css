@@ -1,0 +1,73 @@
+/* MONSTERS THEME */
+.monsters-bgc {
+  background-color: #012B54;
+}
+.monsters-header-font {
+  font-family: 'Freckle Face', sans-serif;
+}
+.monsters-body-font {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+.monsters-light-font {
+  color: #8ea9ba;
+}
+.monsters-dark-font {
+  color: #012B54;
+}
+/* BUTTON */
+.monsters-bttn {
+  border: 2px solid	#000c14;
+  background-color:	#212f39;
+}
+.monsters-bttn.active {
+  background-color: #7c0200;
+}
+
+/* GAME INFO */
+.game-wrapper {
+  background-color: rgba(176,176,176,.3);
+}
+.game-image {
+  background-color: #012B54;
+  border-radius: 100px;
+}
+.game-rules-header {
+  font-size: 30px;
+  line-height: 30px;
+}
+.game-rules-body {
+  font-size: 17px;
+  border-color: rgba(176,176,176,.25);
+}
+.rules-open, .rules-close {
+  font-size: 14px;
+  color: rgba(142,169,186,.5);
+}
+
+/* GAME SQUARE */
+.game-square {
+  border: 2px solid	#000c14;
+  background-color:	#212f39;
+}
+
+/* GAME END */
+.game-end {
+  background-color: rgba(27,27,27,.6);
+}
+.end-headline {
+  color: white;
+  font-size: 60px;
+}
+.end-text {
+  font-size: 30px;
+}
+
+/* CREDITS */
+.credits {
+  font-size: 10px;
+  margin: 0 0 20px 20px;
+}
+.credits a {
+  font-size: 10px;
+  color: rgba(176,176,176,1);
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Minesweeper - Skunks</title>
+
+  <!-- RESET -->
+  <link rel="stylesheet" href="vendor/reset/reset.css">
+
+  <!-- STYLING -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/skunks.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Poppins:400,700&display=swap" rel="stylesheet">
+
+  <!-- INCLUDE JQUERY LOCALLY -->
+  <script src="vendor/jquery/jquery.js"></script>
+
+  <!-- INCLUDE LOCAL SCRIPT FILE -->
+  <script src="scripts/game.js"></script>
+  <script src="https://kit.fontawesome.com/735d49a661.js"></script>
+
+</head>
+
+<body class="skunks-bgc skunks-body-font">
+
+<div class="page-container flex-center">
+
+<div class="game-wrapper flex-center">
+  <div class="game-info flex-center flex-column">
+    <div class="game-image">
+      <img src="images/skunks.png">
+    </div>
+    <div class="game-rules-container skunks-light-font">
+      <p class="game-rules-header skunks-header-font">Pee-yew! What's the smell?</p>
+      <div class="game-rules-collapse">
+        <div class="rules-close flex-wrap">
+          <i class="fas fa-chevron-down"></i>
+          <p class="rules-collapse-arrows">close rules</p>
+        </div>
+        <div class="rules-open flex-wrap hide">
+          <i class="fas fa-chevron-up"></i>
+          <p class="rules-collapse-arrows">open rules</p>
+        </div>
+      </div>
+      <div class="game-rules-body">
+        <p>Select a square to reveal a clue (a number) on where the skunks stench waits.</p>
+        <br>
+        <p>The number shown is how many skunks are neighboring that square -
+          to the top, bottom, right, left, & all diagonals.</p>
+        <br>
+        <p>If you think a skunk is hiding behind a square, gently catch it with a carrier cage.</p>
+      </div>
+    </div>
+    <div class="game-buttons flex-column flex-center">
+      <a href="#">
+        <button class="button-flag skunks-bttn skunks-light-font skunks-header-font">FLAG</button>
+      </a>
+      <a href="#">
+        <button class="button-new skunks-bttn skunks-light-font skunks-header-font">NEW GAME</button>
+      </a>
+      <a href="index.html">
+        <button class="button-back skunks-bttn skunks-light-font skunks-header-font">BACK</button>
+      </a>
+    </div>
+  </div>
+  <div class="game-grid skunks-header-font flex-wrap flex-space-between">
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+    <div class="flex-center safe game-square skunks-light-font skunks"></div>
+
+    <div class="game-end skunks-light-font flex-center hide">
+      <div class="game-end-won skunks-header-font flex-column hide">
+        <p class="game-won end-headline">Congrats!</p>
+        <p class="game-won end-text">You successfully caught all the skunks.</p>
+      </div>
+      <div class="game-end-lost skunks-header-font flex-column hide">
+        <p class="game-lost end-headline">Oh no!</p>
+        <p class="game-lost end-text">You were sprayed by the skunks!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="credits skunks-light-font skunks-body-font">Icons made by <a href="https://www.freepik.com/"
+  title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
+  title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
+  title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+</body>
+
+</html>
