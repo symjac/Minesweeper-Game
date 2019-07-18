@@ -25,7 +25,7 @@
 .cops-bttn {
   border: 2px solid #1e3932;
   background-color:	#89aa9f;
-  font-size: 20px;
+  font-size: 18px;
 }
 .cops-bttn.active {
   background-color: #7c0200;
@@ -78,6 +78,6 @@
 
 
 @media (max-width: 600px){
-  button {
-    font-size: 13px;
+  .button-new {
+    font-size: 12px;
   }

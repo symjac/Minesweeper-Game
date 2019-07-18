@@ -65,7 +65,11 @@ $('*').on('click', function () {
   };
 
 //clicking buttons
-  if ($flagButtonActive) {
+  if (bombsFlagged === 5) {
+    $('.game-end').removeClass('hide');
+    $('.game-end-won').removeClass('hide');
+    winCount ();
+  } else if ($flagButtonActive) {
     //Flag button deactivated
     $gameSquare.removeClass('flag-ready');
     $('.button-flag').removeClass('active');
@@ -85,7 +89,6 @@ $('*').on('click', function () {
     $('.rules-close').addClass('hide');
   } else if ($instructionsOpen) {
     //open rules
-    console.log('open instructions');
     $('.rules-close').removeClass('hide');
     $('.game-rules-body').removeClass('hide');
     $('.rules-open').addClass('hide');
@@ -115,8 +118,6 @@ $('*').on('click', function () {
     $(this).addClass('flagged');
     $gameSquare.removeClass('flag-ready');
     $('.button-flag').removeClass('active');
-
-//reveal Safe/Bomb
   } else if ($selectedSquareIsSafe && !$selectedSquareFlagged) {
     //reveal Safe square
     $selectedSquareBombCount.removeClass('hide');
@@ -127,16 +128,30 @@ $('*').on('click', function () {
     $('.flag-image').remove();
     $('.bomb-image').removeClass('hide');
     $('.bomb-count').removeClass('hide');
+    loseCount ();
   };
 
-//if bombs all flagged, game won
-  if (bombsFlagged === 5)  {
-    $('.game-end').removeClass('hide');
-    $('.game-end-won').removeClass('hide');
-  }
 });
 
+function winCount () {
+  if (sessionStorage.wincount) {
+    sessionStorage.wincount = Number(sessionStorage.wincount)+1;
+  } else {
+    sessionStorage.wincount = 1;
+  }
+  // console.log('win count', sessionStorage.wincount);
+  $('.game-counter').append('<p>'+sessionStorage.wincount+' wins'+'</p>');
+}
 
+function loseCount () {
+  if (sessionStorage.losecount) {
+    sessionStorage.losecount = Number(sessionStorage.losecount)+1;
+  } else {
+    sessionStorage.losecount = 1;
+  }
+  // console.log('lose count', sessionStorage.losecount);
+  $('.game-counter').append('<p>'+sessionStorage.losecount+' losses'+'</p>');
+}
 
 //based on each Safe square's index #, check if its neighboring squares are bombs
 function safeSquares () {

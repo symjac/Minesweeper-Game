@@ -106,6 +106,13 @@ button {
   object-fit: cover;
 }
 
+/* GAME COUNTER */
+.game-counter {
+  width: 100px;
+  height: 300px;
+  margin: 10px;
+  border: 1px solid black;
+}
 /* GAME END */
 .game-end {
   position: absolute;
