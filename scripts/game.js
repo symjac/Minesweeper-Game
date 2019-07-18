@@ -193,6 +193,12 @@ function safeSquares () {
 
 
 
+if($(window).width() <= 600){
+  $('.rules-open').removeClass('hide');
+  $('.game-rules-body').addClass('hide');
+  $('.rules-close').addClass('hide');
+}
+
 
 
 });
