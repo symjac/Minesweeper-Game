@@ -1,10 +1,42 @@
 $(document).ready(function() {
 
-var bombsFlagged = 0;
-var gameCountLosses = document.getElementById('game-counter-losses');
-var gameCountWins = document.getElementById('game-counter-wins');
+var $gameSquare = $('.game-square');
+var allSquares = Array.from({length: 25}, (x,i) => i); //full array of 0-25
 
-setUpBoard ();
+//assign 5 Bombs randomly
+var bombs = [];
+while(bombs.length < 5) {
+  var bombIndex = Math.floor(Math.random()*25);
+  if(bombs.indexOf(bombIndex) === -1) bombs.push(bombIndex);
+};
+
+//all remaining squares are Safe, takes the full array of 0-25 minus bombs
+var safes = allSquares.filter((square) => !bombs.includes(square));
+
+//add Bomb images
+bombs.forEach(function(bomb) {
+  var $bombImage = $('<img class="bomb-image hide">');
+
+  //change bomb image by theme
+  if ($('.game-square').hasClass('monsters')) {
+    $bombImage.attr('src', 'images/monsters.png');
+  } else if ($('.game-square').hasClass('cops')) {
+    $bombImage.attr('src', 'images/cops.png');
+  } else if ($('.game-square').hasClass('skunks')) {
+    $bombImage.attr('src', 'images/skunks.png');
+  };
+
+  var $bombSquare = $gameSquare.eq(bomb);
+  $bombSquare.append($bombImage).addClass('bomb').removeClass('safe');
+});
+
+//add Safe squares with bomb count
+safes.forEach(function(safe) {
+  n = safe;
+  safeSquares ();
+});
+
+var bombsFlagged = 0;
 
 $('*').on('click', function () {
   var $flagButtonActive = $(this).hasClass('button-flag' && 'active');
@@ -33,16 +65,13 @@ $('*').on('click', function () {
   };
 
 //clicking buttons
-  if (bombsFlagged === 5) {
-    $('.game-end').removeClass('hide');
-    $('.game-end-won').removeClass('hide');
-  } else if ($flagButtonActive) {
+  if ($flagButtonActive) {
     //Flag button deactivated
-    $('.game-square').removeClass('flag-ready');
+    $gameSquare.removeClass('flag-ready');
     $('.button-flag').removeClass('active');
   } else if ($flagButton) {
     //Flag button activated
-    $('.game-square').addClass('flag-ready');
+    $gameSquare.addClass('flag-ready');
     $('.button-flag').addClass('active');
   } else if ($newGameButton) {
     //refreshes page for new grid
@@ -56,6 +85,7 @@ $('*').on('click', function () {
     $('.rules-close').addClass('hide');
   } else if ($instructionsOpen) {
     //open rules
+    console.log('open instructions');
     $('.rules-close').removeClass('hide');
     $('.game-rules-body').removeClass('hide');
     $('.rules-open').addClass('hide');
@@ -70,21 +100,23 @@ $('*').on('click', function () {
     bombsFlagged += 1;
     $(this).append($flagImage);
     $(this).addClass('flagged');
-    $('.game-square').removeClass('flag-ready');
+    $gameSquare.removeClass('flag-ready');
     $('.button-flag').removeClass('active');
   } else if ($flagReady && !($selectedSquareBombCount.hasClass('hide'))) {
     //rare case if user wants to switch a Safe to Flagged
     $selectedSquareBombCount.addClass('hide');
     $(this).append($flagImage);
     $(this).addClass('flagged');
-    $('.game-square').removeClass('flag-ready');
+    $gameSquare.removeClass('flag-ready');
     $('.button-flag').removeClass('active');
   } else if ($flagReady) {
     //Flag square
     $(this).append($flagImage);
     $(this).addClass('flagged');
-    $('.game-square').removeClass('flag-ready');
+    $gameSquare.removeClass('flag-ready');
     $('.button-flag').removeClass('active');
+
+//reveal Safe/Bomb
   } else if ($selectedSquareIsSafe && !$selectedSquareFlagged) {
     //reveal Safe square
     $selectedSquareBombCount.removeClass('hide');
@@ -97,43 +129,19 @@ $('*').on('click', function () {
     $('.bomb-count').removeClass('hide');
   };
 
+//if bombs all flagged, game won
+  if (bombsFlagged === 5)  {
+    $('.game-end').removeClass('hide');
+    $('.game-end-won').removeClass('hide');
+  }
 });
 
-function setUpBoard () {
-  var allSquares = Array.from({length: 25}, (x,i) => i); //full array of 0-25
-  //assign 5 Bombs randomly
-  var bombs = [];
-  while(bombs.length < 5) {
-    var bombIndex = Math.floor(Math.random()*25);
-    if(bombs.indexOf(bombIndex) === -1) bombs.push(bombIndex);
-  };
-  //all remaining squares are Safe, takes the full array of 0-25 minus bombs
-  var safes = allSquares.filter((square) => !bombs.includes(square));
-  //add Bomb images
-  bombs.forEach(function(bomb) {
-    var $bombImage = $('<img class="bomb-image hide">');
-    //change bomb image by theme
-    if ($('.game-square').hasClass('monsters')) {
-      $bombImage.attr('src', 'images/monsters.png');
-    } else if ($('.game-square').hasClass('cops')) {
-      $bombImage.attr('src', 'images/cops.png');
-    } else if ($('.game-square').hasClass('skunks')) {
-      $bombImage.attr('src', 'images/skunks.png');
-    };
-    var $bombSquare = $('.game-square').eq(bomb);
-    $bombSquare.append($bombImage).addClass('bomb').removeClass('safe');
-  });
-  //add Safe squares with bomb count
-  safes.forEach(function(safe) {
-    n = safe;
-    safeSquares ();
-  });
-}
+
 
 //based on each Safe square's index #, check if its neighboring squares are bombs
 function safeSquares () {
   var bombCount = 0;
-  var $indexedSquare = $('.game-square').eq(n);
+  var $indexedSquare = $gameSquare.eq(n);
 
   switch (true) {
     case (n === 0):
@@ -159,15 +167,17 @@ function safeSquares () {
   //calculate each Safe square's bomb count
   function bombCounting () {
     squareIndexes.forEach(function(squareIndex) {
-      var $nearbySquare = $('.game-square').eq(squareIndex);
+      var $nearbySquare = $gameSquare.eq(squareIndex);
       if (($nearbySquare.hasClass('bomb')) && (squareIndex >= 0)) {
-        bombCount++;
-      };
+        bombCount++; };
     });
   };
   //add bomb count to Safe squares
   $indexedSquare.append('<p class="bomb-count hide">'+bombCount+'</p>');
 };
+
+
+
 
 
 });
